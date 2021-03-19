@@ -1,0 +1,15 @@
+<h1>Listado de mascotas</h1>
+<a href="/mascotas/create_form">Crear nueva mascota</a>
+<div class="mascotas-list">
+  {{#each mascotas}}
+    <div class="mascota">
+      <div>Nombre: {{this.nombre}}</div>
+      <div>Ubicación: {{this.ubicacion}}</div>
+      <div>
+        <a href="/mascotas/update/{{this.id}}">Editar</a>
+        <a href="/mascotas/show/{{this.id}}">Mostrar</a>
+        <a href="/mascotas/delete/{{this.id}}">Eliminar</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

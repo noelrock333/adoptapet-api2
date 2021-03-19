@@ -1,0 +1,17 @@
+<form method="POST" action="/v1/mascotas/update/{{mascota.id}}">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="{{mascota.nombre}}">
+  </div>
+  <div>
+    <label for="foto">Foto URL:</label>
+    <input type="text" name="foto" id="foto" value="{{mascota.foto}}">
+  </div>
+  <div>
+    <label for="ubicacion">Ubicación:</label>
+    <input type="text" name="ubicacion" id="ubicacion" value="{{mascota.ubicacion}}">
+  </div>
+  <div>
+    <input type="submit" value="Editar mascota">
+  </div>
+</form>
