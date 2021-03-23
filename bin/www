@@ -3,10 +3,11 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').config();
 var app = require('../app');
 var debug = require('debug')('adoptapet-api2:server');
 var http = require('http');
+const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
@@ -24,8 +25,12 @@ var server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-
-server.listen(port);
+mongoose
+  .connect(process.env.DATABASE_URL, { useNewUrlParser: true })
+  .then(() => {
+    console.log('Connected to mongo using mongoose')
+    server.listen(port);
+  })
 server.on('error', onError);
 server.on('listening', onListening);
 
