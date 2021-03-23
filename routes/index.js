@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var knexFile = require('../knexfile');
-var knex = require('knex')(knexFile['development'])
+var knex = require('knex')(knexFile[process.env.NODE_ENV || 'development'])
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
