@@ -1,8 +1,10 @@
 var express = require('express');
 var router = express.Router();
-var knexFile = require('../knexfile');
+
 var Mascota = require('../models/mascota');
-var knex = require('knex')(knexFile[process.env.NODE_ENV || 'development'])
+
+// var knexFile = require('../knexfile');
+// var knex = require('knex')(knexFile[process.env.NODE_ENV || 'development'])
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,7 +18,8 @@ router.post('/', function(req, res) {
 });
 
 router.get('/v1/mascotas/:id', async (req, res) => {
-  const mascota = await knex.select('*').from('mascotas').where('id', req.params.id).first()
+  // const mascota = await knex.select('*').from('mascotas').where('id', req.params.id).first()
+  const mascota = await Mascota.findOne({ _id: req.params.id })
   res.render('mascota', mascota)
 });
 
