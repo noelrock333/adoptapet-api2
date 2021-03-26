@@ -1,0 +1,15 @@
+<h1>Vista de usuarios</h1>
+
+<a href="/users/create">Crear un nuevo usuario</a>
+{{#each users}}
+  <div>
+    <span>{{this.name}}</span>
+    <p>{{this.email}}</p>
+    <p>{{this.age}}</p>
+    <div>
+      <a href="/users/update/{{this._id}}">Actualizar</a>
+      <a href="/users/show/{{this._id}}">Mostrar</a>
+      <a href="/users/delete/{{this._id}}">Eliminar</a>
+    </div>
+  </div>
+{{/each}}

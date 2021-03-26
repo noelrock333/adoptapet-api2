@@ -1,0 +1,17 @@
+<form action="/users/update/{{user._id}}" method="POST">
+  <div>
+    <label for="">Nombre</label>
+    <input type="text" name="name" class="form-control" value="{{user.name}}">
+  </div>
+  <div>
+    <label for="">Correo electrónico</label>
+    <input type="text" name="email" class="form-control" value="{{user.email}}">
+  </div>
+  <div>
+    <label for="">Edad</label>
+    <input type="text" name="age" class="form-control" value="{{user.age}}">
+  </div>
+  <div>
+    <input type="submit" value="Actualizar usuario">
+  </div>
+</form>
